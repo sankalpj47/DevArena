@@ -44,14 +44,14 @@ export default function LoginPage() {
   return (
     <div style={{ position: "relative", minHeight: "100vh" }}>
       
-      {/* ✅ Background */}
+  
       <GridTrailEffect />
 
-      {/* ✅ Foreground */}
+  
       <div
         style={{
           minHeight: "100vh",
-          background: "transparent", // ✅ FIXED
+          background: "transparent", 
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -59,7 +59,7 @@ export default function LoginPage() {
           padding: "24px",
           position: "relative",
           overflow: "hidden",
-          zIndex: 1, // ✅ FIXED
+          zIndex: 1, 
         }}
       >
         <div
@@ -155,7 +155,6 @@ export default function LoginPage() {
               Welcome Back
             </h1>
 
-            {/* ⚡ REST OF YOUR CODE EXACT SAME */}
           <p style={{ fontSize:"13px", color:"var(--text3)", textAlign:"center", marginBottom:"28px", fontFamily:"var(--mono)" }}>Sign in to continue your mission</p>
           <div style={{ marginBottom:"16px" }}>
             <label style={{ fontSize:"11px", color:"var(--text3)", textTransform:"uppercase", letterSpacing:"1.5px", fontFamily:"var(--mono)", display:"block", marginBottom:"8px" }}>Email</label>

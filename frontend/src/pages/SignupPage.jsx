@@ -6,6 +6,8 @@ import { User, Mail, Lock, Eye, EyeOff, Zap, X, Phone } from "lucide-react";
 import axios from "axios";
 import { addUser } from "../utils/store";
 import { TECH_SKILLS } from "../utils/constants";
+import GridTrailEffect from "../components/GridTrialEffect";
+
 
 export default function SignupPage() {
   const [step, setStep] = useState(1);
@@ -68,9 +70,11 @@ export default function SignupPage() {
   const inputStyle = { background:"rgba(0,255,135,0.03)", border:"1px solid rgba(0,255,135,0.15)", borderRadius:"10px", padding:"11px 14px", fontSize:"13px", color:"var(--text)", fontFamily:"var(--font)", outline:"none", width:"100%" };
 
   return (
+     
     <div style={{ minHeight:"100vh", background:"var(--bg)", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", padding:"24px", position:"relative", overflow:"hidden" }}>
       <div style={{ position:"absolute", top:"20%", left:"50%", transform:"translateX(-50%)", width:"500px", height:"300px", background:"radial-gradient(ellipse, rgba(0,255,135,0.04) 0%, transparent 70%)", pointerEvents:"none" }}/>
 
+      <GridTrailEffect/>
       {/* Logo */}
       <motion.div initial={{ opacity:0, y:-20 }} animate={{ opacity:1, y:0 }} style={{ display:"flex", alignItems:"center", gap:"12px", marginBottom:"24px" }}>
         <div style={{ width:"42px", height:"42px", borderRadius:"12px", background:"var(--green)", display:"flex", alignItems:"center", justifyContent:"center", boxShadow:"0 0 25px rgba(0,255,135,0.5)" }}>
@@ -101,7 +105,8 @@ export default function SignupPage() {
           <div style={{ display:"flex", justifyContent:"space-between", marginBottom:"22px" }}>
             {steps.map((s,i) => <span key={i} style={{ fontSize:"10px", color:step===i+1?"var(--green)":"var(--text3)", fontFamily:"var(--mono)" }}>{s}</span>)}
           </div>
-
+    
+         
           <AnimatePresence mode="wait">
 
             {/* ── STEP 1 ── */}

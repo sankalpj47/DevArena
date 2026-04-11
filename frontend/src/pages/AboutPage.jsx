@@ -127,8 +127,8 @@ export default function AboutPage() {
             </motion.button>
           </Link>
           <p style={{ fontSize:"13px", color:"var(--text3)", marginTop:"14px" }}>
-            100% free · No credit card · Built by{" "}
-            <a href="https://github.com/Mauryavishal18" target="_blank" rel="noreferrer" style={{ color:"var(--green)", textDecoration:"none", fontWeight:600 }}>Vishal Maurya</a>
+                    Built by{" "}
+            <a href="https://github.com/sankalpj" target="_blank" rel="noreferrer" style={{ color:"var(--green)", textDecoration:"none", fontWeight:600 }}>Sankalp Joshi</a>
           </p>
         </div>
       </div>

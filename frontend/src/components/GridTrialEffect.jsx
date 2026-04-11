@@ -94,7 +94,7 @@ export default function GridTrailEffect({ rows = 20, cols = 35, radius = 2 }) {
             style={{
               border: "1px solid",
               borderColor: isActive
-                ? "rgba(139, 92, 246, 0.6)"
+                ? "rgba(0,255,135,0.28)"
                 : "rgba(139, 92, 246, 0.10)",
               boxSizing: "border-box",
             }}
