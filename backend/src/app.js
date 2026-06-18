@@ -17,16 +17,32 @@ const { feedRouter, requestRouter, userRouter, matchRouter, chatRouter } = requi
 
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server, {
-  cors: {
-    origin: (origin, cb) => {
-      const allowed = [process.env.FRONTEND_URL, "http://localhost:5174", "http://localhost:5173"].filter(Boolean);
-      if (!origin || allowed.some(o => origin === o || origin.startsWith(o))) return cb(null, true);
-      cb(new Error("Not allowed by CORS"));
-    },
-    credentials: true
+
+// Render sits behind a proxy — needed so req.ip reflects the real client IP
+// (otherwise express-rate-limit can end up treating all traffic as one IP)
+app.set("trust proxy", 1);
+
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  "http://localhost:5174",
+  "http://localhost:5173",
+  "https://dev-arena-tau.vercel.app",
+].filter(Boolean);
+
+const corsOptions = {
+  origin: (origin, cb) => {
+    if (!origin || allowedOrigins.some(o => origin === o || origin.startsWith(o))) return cb(null, true);
+    cb(new Error("Not allowed by CORS"));
   },
-});
+  credentials: true,
+};
+
+// ✅ CORS goes first — before helmet, rate limiting, or anything else that
+// could short-circuit a request — so every response (429s, 404s, errors
+// included) always carries the right Access-Control-Allow-Origin header.
+app.use(cors(corsOptions));
+
+const io = new Server(server, { cors: corsOptions });
 app.set("io", io);
 
 app.use(helmet({
@@ -56,7 +72,12 @@ app.use((req, res, next) => {
 });
 
 // Global rate limit
-app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 300, message: { message: "Too many requests" } }));
+app.use(rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 300,
+  message: { message: "Too many requests" },
+  skip: (req) => req.method === "OPTIONS", // never rate-limit preflight
+}));
 
 // Strict rate limit for auth routes (prevent brute force)
 const authLimiter = rateLimit({
@@ -64,31 +85,20 @@ const authLimiter = rateLimit({
   max: 10, // 10 attempts per 15 min
   message: { message: "Too many login attempts. Try again in 15 minutes." },
   keyGenerator: (req) => req.ip,
+  skip: (req) => req.method === "OPTIONS",
 });
 const connectionLimiter = rateLimit({
   windowMs: 60 * 60 * 1000, // 1 hour
   max: 20, // max 20 connection requests per hour
   message: { message: "Too many connection requests. Slow down!" },
+  skip: (req) => req.method === "OPTIONS",
 });
-// ✅ Production-ready CORS — supports Vercel frontend + localhost
-const allowedOrigins = [
-  process.env.FRONTEND_URL,
-  "http://localhost:5174",
-  "http://localhost:5173",
-].filter(Boolean);
-app.use(cors({
-  origin: (origin, cb) => {
-    if (!origin || allowedOrigins.some(o => origin === o || origin.startsWith(o))) return cb(null, true);
-    cb(new Error("Not allowed by CORS"));
-  },
-  credentials: true,
-}));
+
 app.use(express.json({ limit: "10mb" }));
 app.use(cookieParser());
 
-// Serve uploaded files
+// Serve uploaded files (CORS headers already set globally above)
 app.use("/uploads", (req, res, next) => {
-  res.header("Access-Control-Allow-Origin", process.env.FRONTEND_URL || "http://localhost:5174");
   res.header("Cross-Origin-Resource-Policy", "cross-origin");
   next();
 }, express.static(path.join(__dirname, "../uploads")));
