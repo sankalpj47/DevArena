@@ -9,7 +9,7 @@ import "./index.css";
 import axios from "axios";
 
 // ✅ Auto-detects local vs production
-axios.defaults.baseURL = import.meta.env.VITE_BASE_URL || "https://devarena-alt0.onrender.com/";
+axios.defaults.baseURL = import.meta.env.VITE_BASE_URL || "https://devarena-alt0.onrender.com";
 axios.defaults.withCredentials = true;
 
 ReactDOM.createRoot(document.getElementById("root")).render(
