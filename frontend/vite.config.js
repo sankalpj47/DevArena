@@ -6,7 +6,7 @@ export default defineConfig({
     port: 5174,
     proxy: {
       "/api": {
-        target: "http://localhost:8080",
+        target: "https://devarena-alt0.onrender.com/",
         changeOrigin: true,
         rewrite: p => p.replace(/^\/api/, "")
       }
