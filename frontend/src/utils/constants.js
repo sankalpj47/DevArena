@@ -3,7 +3,9 @@
 // Never hardcode API keys here!
 // ─────────────────────────────────────────────────────────
 
-export const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:8080";
+export const BASE_URL =
+  import.meta.env.VITE_BASE_URL ||
+  "https://devarena-alt0.onrender.com";
 
 // Groq AI — key comes from .env (VITE_GROQ_API_KEY)
 export const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY || "";
