@@ -53,7 +53,6 @@ export default function App() {
         <Route path="settings" element={<SettingsPage />} />
         <Route path="opensource" element={<OpenSourcePage />} />
         <Route path="user/:userId" element={<UserProfilePage />} />
-        {/* <Route path="blind-date" element={<BlindDevDatePage />} /> */}
         <Route path="dev-dna" element={<DevDNAPage />} />
         <Route path="world-cup" element={<DevWorldCupPage />} />
         <Route path="games" element={<DevGamesPage />} />

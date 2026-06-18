@@ -30,7 +30,7 @@
 --font:'Space Grotesk',sans-serif;
 --mono:'JetBrains Mono',monospace;
 
---purple:#a78bfa;
+--purple:#00ff87;
 --blue:#38bdf8;
 --orange:#fb923c;
 --red:#f87171
@@ -190,7 +190,7 @@ border:1px solid rgba(0,255,135,0.25);
 color:var(--green)
 }
 
-.tag-p{background:rgba(167,139,250,0.08);border:1px solid rgba(167,139,250,0.2);color:#a78bfa}
+.tag-p{background:rgba(0,255,135,0.08);border:1px solid rgba(0,255,135,0.2);color:var(--green)}
 .tag-b{background:rgba(56,189,248,0.08);border:1px solid rgba(56,189,248,0.2);color:#38bdf8}
 .tag-n{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);color:var(--text2)}
 .tag-r{background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.2);color:#f87171}
