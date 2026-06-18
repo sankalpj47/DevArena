@@ -8,9 +8,9 @@ export default function Footer() {
         <div style={{ display:"flex", alignItems:"center", gap:"8px" }}>
           <Zap size={14} color="var(--green)" fill="var(--green)"/>
           <span style={{ fontSize:"12px", color:"var(--text3)", fontFamily:"var(--mono)" }}>
-            © 2026 DEVCOMMUNITY · Built with{" "}
+            © 2026 DEVARENA · Built with{" "}
             <Heart size={10} style={{ display:"inline", color:"#f87171", fill:"#f87171", verticalAlign:"middle" }}/> by{" "}
-            <a href="https://github.com/Mauryavishal18" target="_blank" rel="noreferrer" style={{ color:"var(--green)", textDecoration:"none", fontWeight:600 }}>Sankalp Joshi</a>
+            <a href="https://github.com/sankalpj47" target="_blank" rel="noreferrer" style={{ color:"var(--green)", textDecoration:"none", fontWeight:600 }}>Sankalp Joshi</a>
           </span>
         </div>
         <div style={{ display:"flex", gap:"16px", alignItems:"center" }}>

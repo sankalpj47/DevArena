@@ -103,14 +103,42 @@ export default function SignupPage() {
         <div style={{ position: "absolute", top: "12%", left: "50%", transform: "translateX(-50%)", width: "500px", height: "300px", background: "radial-gradient(ellipse, rgba(0,255,135,0.04) 0%, transparent 70%)", pointerEvents: "none" }} />
 
         {/* Logo */}
-        <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "22px" }}>
-          <div style={{ width: "42px", height: "42px", borderRadius: "12px", background: "var(--green)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 0 25px rgba(0,255,135,0.5)" }}>
-            <Zap size={20} color="#040d08" fill="#040d08" />
-          </div>
-          <span style={{ fontSize: "18px", fontWeight: 700, letterSpacing: "2px", color: "var(--text)", fontFamily: "var(--mono)" }}>
-            DEV<span style={{ color: "var(--green)" }}>ARENA</span>
-          </span>
-        </motion.div>
+          <motion.div
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "28px" }}
+>
+  <img
+    src="/images/logo.png"
+    alt="DevArena Logo"
+    style={{
+      width: "36px",
+      height: "36px",
+      objectFit: "contain",
+      flexShrink: 0,
+    }}
+  />
+
+  <span
+    style={{
+      fontSize: "18px",
+      fontWeight: 700,
+      letterSpacing: "2px",
+      color: "var(--text)",
+      fontFamily: "var(--mono)",
+    }}
+  >
+    DEV
+    <span
+      style={{
+        color: "var(--green)",
+        textShadow: "0 0 20px rgba(0,255,135,0.6)",
+      }}
+    >
+      ARENA
+    </span>
+  </span>
+</motion.div>
 
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
           style={{ width: "100%", maxWidth: "480px", background: "rgba(7,21,16,0.92)", border: "1px solid rgba(0,255,135,0.15)", borderRadius: "20px", overflow: "hidden", boxShadow: "0 0 60px rgba(0,0,0,0.6)" }}>

@@ -66,7 +66,7 @@ export default function SettingsPage() {
       </motion.div>
 
       {/* Appearance */}
-      <motion.div initial={{ opacity:0, y:16 }} animate={{ opacity:1, y:0 }} transition={{ delay:.05 }}
+      {/* <motion.div initial={{ opacity:0, y:16 }} animate={{ opacity:1, y:0 }} transition={{ delay:.05 }}
         className="glass" style={{ padding:"24px", marginBottom:"16px" }}>
         <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between" }}>
           <div>
@@ -78,7 +78,7 @@ export default function SettingsPage() {
             Switch to {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
           </motion.button>
         </div>
-      </motion.div>
+      </motion.div> */}
 
       {/* Change Password */}
       <motion.div initial={{ opacity:0, y:16 }} animate={{ opacity:1, y:0 }} transition={{ delay:.1 }}

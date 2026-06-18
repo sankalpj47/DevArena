@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { motion, AnimatePresence } from "framer-motion";
-import { Zap, ChevronDown, LogOut, User, Users, Inbox, MessageSquare, Bot, Menu, X, Trophy, BarChart2, Briefcase, Code2, FileText, Globe, Moon, Sun, Settings, Github } from "lucide-react";
+import { Zap, ChevronDown, LogOut, User, Users, Inbox, MessageSquare, Bot, Menu, X, Trophy, BarChart2, Briefcase, Code2, FileText, Globe, Moon, Sun, Settings, Github,  Gamepad2,Dna } from "lucide-react";
 import axios from "axios";
 import { removeUser, clearFeed, clearConnections } from "../utils/store";
 import { getAvatarUrl, BASE_URL } from "../utils/constants";
@@ -58,7 +58,7 @@ export default function Navbar({ socket }) {
     { to: "/requests", label: "Requests" },
     { to: "/chat", label: "Messages" },
     { to: "/leaderboard", label: "Leaderboard" },
-    { to: "/ai", label: "Dev AI", accent: true },
+    { to: "/ai", label: "Dev AI" },
     { to: "/code-review", label: "Code Review" },
   ];
 
@@ -71,9 +71,21 @@ export default function Navbar({ socket }) {
     { icon: <BarChart2 size={13} />, label: "Analytics", to: "/analytics" },
     { icon: <Briefcase size={13} />, label: "Collab Board", to: "/collab" },
     { icon: <Globe size={13} />, label: "Jobs", to: "/jobs" },
-    { icon: <span style={{ fontSize: "11px" }}>🎮</span>, label: "Dev Games", to: "/games" },
-    { icon: <span style={{ fontSize: "11px" }}>🧬</span>, label: "Dev DNA", to: "/dev-dna" },
-    { icon: <span style={{ fontSize: "11px" }}>🏆</span>, label: "World Cup", to: "/world-cup" },
+{
+  icon: <Gamepad2 size={14} />,
+  label: "Dev Games",
+  to: "/games",
+},
+{
+  icon: <Dna size={14} />,
+  label: "Dev DNA",
+  to: "/dev-dna",
+},
+{
+  icon: <Trophy size={14} />,
+  label: "World Cup",
+  to: "/world-cup",
+},
     { icon: <Code2 size={13} />, label: "Hackathons", to: "/hackathons" },
     { icon: <FileText size={13} />, label: "Resume Builder", to: "/resume" },
     { icon: <Github size={13} />, label: "Open Source Match", to: "/opensource" },
@@ -88,14 +100,40 @@ export default function Navbar({ socket }) {
         <div style={{ maxWidth: "1300px", margin: "0 auto", padding: "0 20px", height: "62px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px" }}>
 
           {/* Logo */}
-          <Link to="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none", flexShrink: 0 }}>
-            <motion.div whileHover={{ scale: 1.05 }} style={{ width: "36px", height: "36px", borderRadius: "10px", background: "var(--green)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 0 20px rgba(0,255,135,.4)" }}>
-              <Zap size={17} color="#040d08" fill="#040d08" />
-            </motion.div>
-            <span style={{ fontSize: "15px", fontWeight: 700, letterSpacing: "2px", color: "var(--text)", fontFamily: "var(--mono)" }}>
-              DEV<span style={{ color: "var(--green)" }}>ARENA</span>
-            </span>
-          </Link>
+       <Link
+  to="/"
+  style={{
+    display: "flex",
+    alignItems: "center",
+    gap: "10px",
+    textDecoration: "none",
+    flexShrink: 0,
+  }}
+>
+  <motion.img
+    whileHover={{ scale: 1.05 }}
+    src="/images/logo.png"
+    alt="DevArena Logo"
+    style={{
+      width: "32px",
+      height: "32px",
+      objectFit: "contain",
+      flexShrink: 0,
+    }}
+  />
+
+  <span
+    style={{
+      fontSize: "15px",
+      fontWeight: 700,
+      letterSpacing: "2px",
+      color: "var(--text)",
+      fontFamily: "var(--mono)",
+    }}
+  >
+    DEV<span style={{ color: "var(--green)" }}>ARENA</span>
+  </span>
+</Link>
 
           {/* Desktop nav links */}
           <div className="nav-desktop-links" style={{ display: "flex", gap: "2px", background: "rgba(0,255,135,.04)", border: "1px solid rgba(0,255,135,.1)", borderRadius: "12px", padding: "4px", overflow: "hidden" }}>
@@ -119,9 +157,9 @@ export default function Navbar({ socket }) {
             <div style={{ display: "flex", alignItems: "center", gap: "8px", flexShrink: 0 }}>
 
               {/* Theme toggle — hidden on very small screens */}
-              <button onClick={toggleTheme} className="btn-ico nav-theme-btn" title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}>
+              {/* <button onClick={toggleTheme} className="btn-ico nav-theme-btn" title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}>
                 {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
-              </button>
+              </button> */}
 
               {/* Notifications */}
               <div className="nav-notif-btn">

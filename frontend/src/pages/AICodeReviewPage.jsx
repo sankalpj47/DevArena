@@ -188,14 +188,14 @@ Also provide a fixed version of the code.`,
         <motion.div initial={{ opacity: 0, x: 12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}
           className="glass" style={{ display: "flex", flexDirection: "column", overflow: "hidden", minHeight: "500px" }}>
 
-          <div style={{ height: "2px", background: `linear-gradient(90deg,transparent,${PURPLE},transparent)` }} />
+          <div style={{ height: "2px", background: `linear-gradient(90deg,transparent,${ACCENT},transparent)` }} />
 
-          <div style={{ padding: "12px 16px", borderBottom: `1px solid ${PURPLE_BORDER}`, display: "flex", alignItems: "center", gap: "8px" }}>
-            <Zap size={13} color={PURPLE} />
+          <div style={{ padding: "12px 16px", borderBottom: `1px solid ${ACCENT_BORDER}`, display: "flex", alignItems: "center", gap: "8px" }}>
+            <Zap size={13} color={ACCENT} />
             <span style={{ fontSize: "12px", fontWeight: 600, color: "var(--text)", flex: 1 }}>AI Review</span>
             <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-              <div className="online-dot" style={{ background: PURPLE, boxShadow: `0 0 6px ${PURPLE}`, width: "6px", height: "6px" }} />
-              <span style={{ fontSize: "10px", color: PURPLE, fontFamily: "var(--mono)" }}>Groq Llama 3</span>
+              <div className="online-dot" style={{ background: ACCENT, boxShadow: `0 0 6px ${ACCENT}`, width: "6px", height: "6px" }} />
+              <span style={{ fontSize: "10px", color: ACCENT, fontFamily: "var(--mono)" }}>Groq Llama 3</span>
             </div>
           </div>
 

@@ -128,7 +128,7 @@ export default function AboutPage() {
           </Link>
           <p style={{ fontSize:"13px", color:"var(--text3)", marginTop:"14px" }}>
                     Built by{" "}
-            <a href="https://github.com/sankalpj" target="_blank" rel="noreferrer" style={{ color:"var(--green)", textDecoration:"none", fontWeight:600 }}>Sankalp Joshi</a>
+            <a href="https://github.com/sankalpj47" target="_blank" rel="noreferrer" style={{ color:"var(--green)", textDecoration:"none", fontWeight:600 }}>Sankalp Joshi</a>
           </p>
         </div>
       </div>

@@ -75,37 +75,42 @@ export default function LoginPage() {
         />
 
         {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "28px" }}
-        >
-          <div
-            style={{
-              width: "42px",
-              height: "42px",
-              borderRadius: "12px",
-              background: "var(--green)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              boxShadow: "0 0 25px rgba(0,255,135,0.5)",
-            }}
-          >
-            <Zap size={20} color="#040d08" fill="#040d08" />
-          </div>
-          <span
-            style={{
-              fontSize: "18px",
-              fontWeight: 700,
-              letterSpacing: "2px",
-              color: "var(--text)",
-              fontFamily: "var(--mono)",
-            }}
-          >
-            DEV<span style={{ color: "var(--green)", textShadow: "0 0 20px rgba(0,255,135,0.6)" }}>ARENA</span>
-          </span>
-        </motion.div>
+   <motion.div
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "28px" }}
+>
+  <img
+    src="/images/logo.png"
+    alt="DevArena Logo"
+    style={{
+      width: "36px",
+      height: "36px",
+      objectFit: "contain",
+      flexShrink: 0,
+    }}
+  />
+
+  <span
+    style={{
+      fontSize: "18px",
+      fontWeight: 700,
+      letterSpacing: "2px",
+      color: "var(--text)",
+      fontFamily: "var(--mono)",
+    }}
+  >
+    DEV
+    <span
+      style={{
+        color: "var(--green)",
+        textShadow: "0 0 20px rgba(0,255,135,0.6)",
+      }}
+    >
+      ARENA
+    </span>
+  </span>
+</motion.div>
 
         {/* Card */}
         <motion.div
