@@ -156,7 +156,7 @@ export default function ProfilePage() {
         <div>
           <p style={{ fontSize:"12px", color:"var(--green)", fontFamily:"var(--mono)", letterSpacing:"1px", marginBottom:"6px" }}>DEVARENA · DEVELOPER PROFILE</p>
           <h1 style={{ fontSize:"28px", fontWeight:700, color:"var(--text)", marginBottom:"4px" }}>Your <span style={{ color:"var(--green)" }}>Profile</span></h1>
-          <p style={{ fontSize:"13px", color:"var(--text2)" }}>Built by <a href="https://github.com/Mauryavishal18" target="_blank" rel="noreferrer" style={{ color:"var(--green)", textDecoration:"none" }}>Vishal Maurya</a></p>
+          <p style={{ fontSize:"13px", color:"var(--text2)" }}>Built by <a href="https://github.com/sankalpj47" target="_blank" rel="noreferrer" style={{ color:"var(--green)", textDecoration:"none" }}>Sankalp Joshi</a></p>
         </div>
         <motion.button whileHover={{ scale:1.03 }} whileTap={{ scale:.97 }} onClick={()=>setEditing(!editing)}
           className={editing?"btn-sec":"btn-prime"} style={{ display:"flex", alignItems:"center", gap:"8px" }}>

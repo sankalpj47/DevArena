@@ -15,7 +15,7 @@ export default function NotFound() {
         <motion.button whileHover={{ scale:1.03 }} whileTap={{ scale:.97 }} onClick={()=>navigate("/")} className="btn-prime" style={{ display:"flex", alignItems:"center", gap:"8px", padding:"11px 24px" }}><Home size={15}/> Go Home</motion.button>
         <motion.button whileHover={{ scale:1.03 }} whileTap={{ scale:.97 }} onClick={()=>navigate(-1)} className="btn-sec" style={{ padding:"11px 24px" }}>← Go Back</motion.button>
       </div>
-      <p style={{ fontSize:"11px", color:"var(--text3)", marginTop:"40px", fontFamily:"var(--mono)" }}>DevArena · Built by <a href="https://github.com/Mauryavishal18" target="_blank" rel="noreferrer" style={{ color:"var(--green)", textDecoration:"none" }}>Sankalp Joshi</a></p>
+      <p style={{ fontSize:"11px", color:"var(--text3)", marginTop:"40px", fontFamily:"var(--mono)" }}>DevArena · Built by <a href="https://github.com/sankalpj47" target="_blank" rel="noreferrer" style={{ color:"var(--green)", textDecoration:"none" }}>Sankalp Joshi</a></p>
     </div>
   );
 }
