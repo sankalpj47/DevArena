@@ -44,7 +44,7 @@ export default function ResetPasswordPage() {
           <Zap size={20} color="#040d08" fill="#040d08" />
         </div>
         <span style={{ fontSize: "18px", fontWeight: 700, letterSpacing: "2px", color: "var(--text)", fontFamily: "var(--mono)" }}>
-          DEV<span style={{ color: "var(--green)" }}>TINDER</span>
+          DEV<span style={{ color: "var(--green)" }}>ARENA</span>
         </span>
       </motion.div>
 

@@ -152,7 +152,7 @@ const sendResetLinkEmail = async (to, resetToken, firstName) => {
           <tr>
             <td align="center" style="padding:32px 40px 20px;">
               <div style="background:#00ff87;border-radius:10px;padding:10px 18px;display:inline-block;">
-                <span style="font-size:18px;font-weight:900;color:#040d08;letter-spacing:2px;font-family:monospace;">⚡ DEVTINDER</span>
+                <span style="font-size:18px;font-weight:900;color:#040d08;letter-spacing:2px;font-family:monospace;">⚡ DEV-ARENA</span>
               </div>
             </td>
                 <tr>
@@ -200,7 +200,7 @@ const sendResetLinkEmail = async (to, resetToken, firstName) => {
           <tr><td style="padding:0 40px;"><hr style="border:none;border-top:1px solid rgba(0,255,135,0.08);"/></td></tr>
           <tr>
             <td align="center" style="padding:20px 40px 32px;">
-              <p style="margin:0;font-size:11px;color:#3d6b4a;">Made with ❤️ by <strong style="color:#00ff87;">DEV-TINDER</strong></p>
+              <p style="margin:0;font-size:11px;color:#3d6b4a;">Made with ❤️ by <strong style="color:#00ff87;">DEV-ARENA</strong></p>
             </td>
           </tr>
         </table>
@@ -216,7 +216,7 @@ const sendResetLinkEmail = async (to, resetToken, firstName) => {
 // Send welcome email on signup
 const sendWelcomeEmail = async (to, firstName) => {
   const t = getTransporter();
-  const appName = process.env.APP_NAME || "DevTinder";
+  const appName = process.env.APP_NAME || "DevArena";
   await t.sendMail({
     from: `"${appName}" <${process.env.GMAIL_USER}>`,
     to,
@@ -233,7 +233,7 @@ const sendWelcomeEmail = async (to, firstName) => {
           <tr>
             <td align="center" style="padding:32px 40px 16px;">
               <div style="background:#00ff87;border-radius:10px;padding:10px 18px;display:inline-block;">
-                <span style="font-size:18px;font-weight:900;color:#040d08;font-family:monospace;">⚡ DEVTINDER</span>
+                <span style="font-size:18px;font-weight:900;color:#040d08;font-family:monospace;">⚡ DEVARENA</span>
               </div>
             </td>
           </tr>
@@ -271,7 +271,7 @@ const sendWelcomeEmail = async (to, firstName) => {
           <tr><td style="padding:0 40px;"><hr style="border:none;border-top:1px solid rgba(0,255,135,0.08);"/></td></tr>
           <tr>
             <td align="center" style="padding:20px 40px 28px;">
-              <p style="margin:0;font-size:11px;color:#3d6b4a;">Made with ❤️ by <strong style="color:#00ff87;">DEV-TINDER</strong></p>
+              <p style="margin:0;font-size:11px;color:#3d6b4a;">Made with ❤️ by <strong style="color:#00ff87;">DEV-ARENA</strong></p>
             </td>
           </tr>
         </table>

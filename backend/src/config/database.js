@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const connectDB = async () => {
   await mongoose.connect(process.env.MONGO_URI, {
-    dbName: "devArena", // explicit DB name — data will appear in Compass under "devtinder"
+    dbName: "devArena", 
   });
   console.log(`✅ MongoDB connected → devArena`);
 };
